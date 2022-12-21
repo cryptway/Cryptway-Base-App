@@ -1,0 +1,12 @@
+export { default as Loader } from "./Layout/Loader";
+export { default as Thanks } from "./Layout/FundSuccess";
+export { default as Navbar } from "./Layout/Navbar";
+export { default as Send } from "./Send";
+export { default as Fund } from "./Faucet/Fund";
+export { default as Faucet } from "./Faucet/Faucet";
+export { default as Thank } from "./Success/thanks";
+export { default as Success } from "./Success/Success";
+export { default as NotFound } from "./NotFound"; 
+export { default as Welcome } from "./Welcome";
+export { default as Footer } from "./Layout/Footer"; 
+export { default as Receive } from "./Receive"; 
