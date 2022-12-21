@@ -4,7 +4,6 @@ import App from "./App";
 import { TransactionsProvider } from "./context/TransactionContext";
 import {FundsProvider } from "./context/FundContext";
 import "./index.css";
-
 ReactDOM.render(
   <FundsProvider> 
   <TransactionsProvider>
