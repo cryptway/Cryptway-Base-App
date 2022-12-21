@@ -1,39 +1,42 @@
-//STORAGE OF BROWSER
-const CACHE_NAME = "version-1";
-const urlsToCache = ["index.html", "offline.html"];
-const self = this;
+let CACHE_NAME = "Cryptway";
+let urlsToCache = ["/"];
 
-//installation
+// Install a service worker
 self.addEventListener("install", (event) => {
+  // Perform install steps
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CACHE_NAME).then(function (cache) {
       console.log("Opened cache");
-
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-// listen for request
+// Cache and return requests
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((res) => {
-      return fetch(event.request).catch(() => caches.match("offline.html"));
+    caches.match(event.request).then(function (response) {
+      // Cache hit - return response
+      if (response) {
+        return response;
+      }
+      return fetch(event.request);
     })
   );
 });
 
-// actitivate the service worker
+// Update a service worker
 self.addEventListener("activate", (event) => {
-    const cacheWhitelist = [];
-    cacheWhitelist.push(CACHE_NAME);
-    event.waitUntil(
-        caches.keys().then((cacheNames) => Promise.all(
-            cacheNames.map((cacheName) => {
-                if(!cacheWhitelist.includes(cacheName)){
-                    return caches.delete(cacheName);
-                }
-            })
-        ))
-    )
+  let cacheWhitelist = ["Cryptway"];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (cacheWhitelist.indexOf(cacheName) === -1) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  );
 });
