@@ -20,18 +20,7 @@ const Navbar = () => {
 <Link to="/"> <img src={logo} alt="logo" className="w-16 h-16 object-contain"  /></Link>
        </div>
     <div class="justify-end">
-    {!currentAccount && (
-            <button
-              type="button"
-              onClick={connectWallet}
-              className="flex px-6 py-2   flex-row justify-center items-center my-5 bg-[#eb056d]  p-3 rounded-3xl  cursor-pointer hover:bg-[#119694]"
-            >
-              <p className="font-poppins font-bold text-lg text-white">
-                Connect Wallet
-              </p>
-            </button>
-
-          )}
+    
             {currentAccount && (
             <div
               className="flex     flex-row justify-center items-center my-5  rounded-3xl  cursor-pointer bg-gray-900"
