@@ -52,7 +52,7 @@ function Swap() {
   return null;
 }
 function Currencies() {
-  window.location.replace("https://cryptwayswap.netlify.app/");
+  window.location.replace("https://cryptwaycurrencies.netlify.app/");
   return null;
 }
 
