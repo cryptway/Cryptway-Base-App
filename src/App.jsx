@@ -35,6 +35,7 @@ function App() {
         <Route path="/receive" element={<Receive />} />
         <Route path="/send" element={<Send />} />
         <Route path="/swap" element={<Swap />} />
+        <Route path="/currencies" element={<Currencies />} />
         <Route path="/fund" element={<Fund />} />
         <Route path="/faucet" element={<Faucet />} />
         <Route path="/thanks" element={<Thank />} />
@@ -47,6 +48,10 @@ function App() {
 }
 
 function Swap() {
+  window.location.replace("https://cryptwayswap.netlify.app/");
+  return null;
+}
+function Currencies() {
   window.location.replace("https://cryptwayswap.netlify.app/");
   return null;
 }

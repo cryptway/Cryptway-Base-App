@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import { Link } from "react-router-dom";
 import swap from "../../../images/swap.png"; 
+import currencies from "../../../images/currencies.png"; 
 import send from "../../../images/send.png"; 
 import recieve from "../../../images/wallet.png";  
 import logo from "../../../images/logo.png"; 
@@ -19,18 +20,6 @@ const Navbar = () => {
 <Link to="/"> <img src={logo} alt="logo" className="w-16 h-16 object-contain"  /></Link>
        </div>
     <div class="justify-end">
-      {!currentAccount && (
-            <button
-              type="button"
-              onClick={connectWallet}
-              className="flex px-6 py-2   flex-row justify-center items-center my-5 bg-[#eb056d]  p-3 rounded-3xl  cursor-pointer hover:bg-[#119694]"
-            >
-              <p className="font-poppins font-bold text-lg text-white">
-                Connect Wallet
-              </p>
-            </button>
- 
-          )}
             {currentAccount && (
             <div
               className="flex     flex-row justify-center items-center my-5  rounded-3xl  cursor-pointer bg-gray-900"
@@ -45,8 +34,10 @@ const Navbar = () => {
             </button></Link>
             <Link to="/swap"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-3xl border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
             <img src={swap} className="w-6 h-6 object-contain" />
-
-        </button></Link>
+            </button></Link>
+            <Link to="/currencies"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-3xl border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+            <img src={currencies} className="w-6 h-6 object-contain" />
+            </button></Link>
         
         </div>
             </div>
