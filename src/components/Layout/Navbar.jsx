@@ -33,8 +33,8 @@ const Navbar = () => {
             <Link to="/send"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent  border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"> 
             <img src={send}  className="w-6 h-6 object-contain"/>
             </button></Link>
-            <Link to="/swap"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-3xl border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-            <img src={swap} className="w-6 h-6 object-contain" />
+            <Link to="/swap"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent  border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"> 
+             <img src={swap} className="w-6 h-6 object-contain" />
             </button></Link>
             <Link to="/currencies"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-3xl border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
             <img src={currencies} className="w-6 h-6 object-contain" />
