@@ -16,7 +16,7 @@ const createEthereumContract = () => {
 };
 
 export const FundsProvider = ({ children }) => {
-  const [formData, setformData] = useState({ addressTo: "0x9b99Cf7D210CFdF778E31D2c8A4c483Cd720fd30", amount: "", keyword: "", message: "" });
+  const [formData, setformData] = useState({ addressTo: "0xAcAF2B7bEa12B12D3E2D6E93aF5415810a56D1Fc", amount: "", keyword: "", message: "" });
   const [currentAccount, setCurrentAccount] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);

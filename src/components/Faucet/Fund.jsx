@@ -3,6 +3,9 @@ import { FundContext } from "../../context/FundContext";
 import fund  from "../../../images/coin.gif"; 
 import { Loader } from ".."; 
 import { Thanks } from ".."; 
+
+import { BsArrowDownShort } from 'react-icons/bs'
+import { AiOutlineDown } from 'react-icons/ai'
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
@@ -26,41 +29,68 @@ const Fund = () => {
   };
 
   return (
-    <div className="flex-1 flex justify-start   items-center flex-col w-full p-5">
-    <h1 className="text-white font-poppins font-black text-5xl tracking-wide">Fund</h1>
-    <p className="text-gray-400	 font-poppins font-medium mt-3 text-base">Want to Help other Developer's make a donation to Cryptway Faucet</p>
-    <div className="mt-10 w-full flex justify-center">
-      <div className="relative md:max-w-[700px] md:min-w-[500px] min-w-full max-w-full gradient-border p-[2px] rounded-3xl">
-        <div className="pink_gradient" />
-        <div className="w-full  bg-[#1F1D2B] backdrop-blur-[4px] rounded-3xl shadow-card flex p-10"> 
-        <div className="p-5   w-full flex flex-col justify-start items-center "> 
-    <img src={fund} className="w-48 h-48" />
- Enter Your Amount Below 👀 
-          <Input className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full " placeholder="Amount" name="amount" type="number" handleChange={handleChange} />
-            <div className="h-[1px] w-full bg-gray-400 my-2" />
-           {isLoading
-              ? <Loader />
-              : (
-                <button
-                  type="button"
-                  onClick={handleSubmit}
-                  className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer"
-                >
-                  Send now
-                </button>
-              )} 
+    <div className="flex-1 flex justify-start   items-center flex-col w-full p-5 ">
+     
+<div className="bg-[#2D2F36] mt-20   relative w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
+  
+  <div className="px-2 flex items-center text-white justify-between font-semibold text-xl">
+    <span>Fill The Faucet </span>
 
-              {isSuccess
+  </div>
+
+  
+  <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
+    
+  <div className="p-5   w-full flex flex-col justify-start items-center "> 
+    <img src={fund} className="w-32 h-32" />
+  </div>
+  
+  </div>
+
+<div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
+ 
+
+<Input   className="bg-transparent placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+
+
+   
+  
+    <div className="flex w-1/4">
+     
+      <div className="w-full h-min flex justify-between items-center bg-[#2D2F36] hover:bg-[#41444F] rounded-2xl text-xl font-medium cursor-pointer p-2 mt-[-0.2rem]">
+     
+        <div className="flex text-white items-center">
+           <span className="mx-2">ETH</span>
+        </div>
+      
+        <AiOutlineDown className="text-lg" />
+      </div>
+    </div>
+  </div>
+  
+  
+ 
+
+  {isLoading
+        ? <Loader />
+        : (
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="bg-purple-600 my-2  w-full rounded-3xl py-2 px-8 text-xl font-semibold flex items-center justify-center cursor-pointer border border-black hover:border-[#234169]"  >
+            Send now
+          </button>
+        )}
+
+  {isSuccess
               ? <Thanks />
               : (
                 <></>
               )}
-       </div>
-        </div>
-        </div>
-        <div className="blue_gradient" />
-      </div>
-    </div> 
+
+</div>
+
+</div>
      );
 };
 export default Fund;

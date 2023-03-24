@@ -11,51 +11,10 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- background: #1F1D2B; 
- 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     box-sizing: border-box; 
+    background: #202124;
 }
-
-.gradient-bg-welcome {
-  background-color:#0f0e13;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, rgb(24, 61, 55) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, #119694 0, transparent 50%);
-}
-
-.gradient-bg-services {
-  background-color:#0f0e13;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 100%, hsla(225,39%,25%,1) 0, transparent 50%);
-}
-
-.gradient-bg-transactions {
-  background-color: #0f0e13;
-  background-image: 
-    radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,25%,1) 0, transparent 50%);
-}
-
-.gradient-bg-footer {
-  background-color: #0f0e13;
-  background-image: 
-    radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 53%), 
-    radial-gradient(at 50% 150%, rgb(39, 109, 114) 0, transparent 50%);
-}
-
-.blue-glassmorphism {
-  background: rgba(50, 112, 112, 0.41);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(0, 0, 0, 0.3);
-}
+  
 
 /* white glassmorphism */
 .white-glassmorphism {
@@ -91,30 +50,7 @@ body {
     rgba(48, 129, 237, 0.8) 100%
   );
 }
-
-.pink_gradient {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 123px;
-  height: 123px;
-  border-radius: 50%;
-
-  background: #fb37ff;
-  filter: blur(200px);
-}
-
-.blue_gradient {
-  position: absolute;
-  bottom: 0%;
-  right: 0%;
-  width: 123px;
-  height: 123px;
-  border-radius: 50%;
-
-  background: #18b2de;
-  filter: blur(200px);
-}
+ 
 
 .gradient-border {
   background: linear-gradient(
@@ -126,6 +62,13 @@ body {
   );
 }
 
+.content-box{box-shadow:
+  10px  5px 0 rgba(0, 0, 0, 0.05),
+  0 5px 10px rgba(0, 0, 0, 0.142);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ 

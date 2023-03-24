@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { TransactionContext } from "../../context/TransactionContext";
 import { Link } from "react-router-dom";
 import swap from "../../../images/swap.png"; 
@@ -6,6 +6,13 @@ import currencies from "../../../images/currencies.png";
 import send from "../../../images/send.png"; 
 import recieve from "../../../images/wallet.png";  
 import logo from "../../../images/logo.png"; 
+import fund from "../../../images/fund-ico.png";
+import dp from "../../../images/walletjazz.jpg";
+import {shortenAddress} from "../../utils/shortenAddress";
+import { HiOutlineLightBulb } from 'react-icons/Hi'
+import {SiEthereum} from 'react-icons/si' 
+import Card from './sidebar'
+import Sidebar from "./sidebar";
 
 const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
@@ -13,39 +20,132 @@ const NavBarItem = ({ title, classprops }) => (
 
 const Navbar = () => { 
   const { currentAccount, connectWallet } = useContext(TransactionContext);
- 
+  const [showSidebar, setShowSidebar] = useState(false);
+
   return ( 
- <nav className="w-full justify-between md:py-6 md:px-14 py-6 px-4">
-<header class="flex items-center px-2 py-2 border-b-1 "><div class="flex items-center flex-grow basis-0"> 
-<Link to="/"> <img src={logo} alt="logo" className="w-16 h-16 object-contain"  /></Link>
+ <nav className="fixed  w-full justify-between">
+<header class="flex items-center px-6 py-0 "><div class="flex items-center flex-grow basis-0"> 
+<Link to="/"  className="flex gap-2"> <img src={logo} alt="logo" className="w-8 h-8 object-contain"  />  <text className="text-white text-2xl font-semibold">CRYPTWAY</text></Link>
        </div>
     <div class="justify-end">
-    
-            {currentAccount && (
-            <div
-              className="flex     flex-row justify-center items-center my-5  rounded-3xl  cursor-pointer bg-gray-900"
-            >
-             <div class="inline-flex" role="group"><Link to="/receive"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-3xl	 border border-gray-900 hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                  
-                  <img src={recieve}  className="w-6 h-6 object-contain" />  
+            
+    {!currentAccount && (
+                <button
+                  type="button"
+                  onClick={connectWallet}
+                  className="flex px-6 py-[6px]  shadow-lg  flex-row justify-center items-center my-5 bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer"
+                >
+                  <p className="font-poppins font-bold text text-white ">
+                    Connect Wallet
+                  </p>
+                </button>
+              )}
 
-            </button></Link>
-            <Link to="/send"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent  border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"> 
-            <img src={send}  className="w-6 h-6 object-contain"/>
-            </button></Link>
-            <Link to="/swap"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent  border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700"> 
-             <img src={swap} className="w-6 h-6 object-contain" />
-            </button></Link>
-            <Link to="/currencies"><button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-3xl border border-gray-900  hover:bg-black hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-            <img src={currencies} className="w-6 h-6 object-contain" />
-            </button></Link>
-        
-        </div>
-            </div>
+{currentAccount && (
+  
+               <div className="flex gap-4">
+                  <button
+                  type="button"
+                  
+                  className="z-50 flex gap-2 px-4 py-[6px] hover:border-[1px] hover:px-[15px] hover:py-[5px] shadow-lg  flex-row justify-center items-center my-5 bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer"
+                >
+               <SiEthereum   className="text-purple-600 border-[1px] rounded-[100%] p-[2px] border-purple-600 text-xl	" />
+                  <p className="font-poppins font-bold text text-white ">
+                 Goerli
+                  </p>
+                </button>
+
+               
+               
+                {showSidebar ? (
+                  
+                  <button
+                  className="flex gap-2  px-4 py-[6px] hover:border-[1px] hover:px-[15px] hover:py-[5px] shadow-lg  text-white items-center   bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer my-5 z-50"
+                  onClick={() => setShowSidebar(!showSidebar)}
+                >
+                 <img src={dp}  className="w-6 h-6 rounded-[100%] mr-2" /> 
+                          <p className="font-poppins font-bold text text-white ">
+                           {shortenAddress(currentAccount)}  
+                          </p>
+                </button>
+      ) : (
+     <> 
+
+        <button
+        className="flex gap-2  px-4 py-[6px] hover:border-[1px] hover:px-[15px] hover:py-[5px] shadow-lg  text-white items-center   bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer my-5 z-50"
+        onClick={() => setShowSidebar(!showSidebar)}
+      >
+       <img src={dp}  className="w-6 h-6 rounded-[100%] mr-2" /> 
+                <p className="font-poppins font-bold text text-white ">
+                 {shortenAddress(currentAccount)}  
+                </p>
+      </button>
+      </>  )}
+               </div>
+               
+              )}
+
+         
  
-          )}
-          </div></header>  
+      <div
+         className={`fixed shadow-lg  bottom-4 right-0 bg-[#2D2F36]  rounded-l-xl p-3 grid sm:grid-cols-1   gap-4   z-40  ease-in-out duration-300 ${
+           showSidebar ? "translate-x-2 " : "translate-x-full"
+         }`}
+       >
+ <Sidebar/>
+       </div>
+            
+ 
+
+
+          </div></header> 
+
+
+
+          
+<div class="ml-8 mt-8 fixed  ">
+<div class="bg-[#2D2F36] content-box rounded-xl p-3 grid sm:grid-cols-1   gap-4 border-[1.5px] border-[#41444F]">
+
+ <div>
+    <button type="button"  onClick={() => setShowSidebar(!showSidebar)} class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={recieve}  className="w-10 h-10 object-contain" /></button>
+ </div>
+ 
+ <div>
+    <Link to="/send"><button type="button" class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={send}  className="w-10 h-10 object-contain" /></button></Link>
+ </div>
+
+ <div>
+    <Link to="/swap"><button type="button" class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={swap}  className="w-10 h-10 object-contain" /></button></Link>
+ </div>
+
+ <div>
+    <Link to="/fund"><button type="button" class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={fund}  className="w-10 h-10 object-contain" /></button></Link>
+ </div>
+
+ <div>
+    <Link to="/currencies"><button type="button" class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={currencies}  className="w-10 h-10 object-contain" /></button></Link>
+ </div>
+ 
+</div>
+</div> 
+
+
+<a   href="https://github.com/orgs/cryptway/discussions" > 
+<button
+                type="button"
+                  
+                  className=" fixed gap-2 bg-purple-600  bottom-2 right-5 flex px-6 py-[6px] border-[1px] border-[#41444F] hover:px-[23px] hover:py-[5px] shadow-lg  flex-row justify-center items-center my-5  rounded-l-3xl rounded-r-3xl  cursor-pointer"
+                >
+                  <HiOutlineLightBulb  className="text-white text-xl	" /> 
+                  <p className="font-poppins font-bold text text-white text-sm ">
+                   Request Feature
+                  </p>
+                </button> </a>
+
     </nav>
+
+
+
   );
 };
 

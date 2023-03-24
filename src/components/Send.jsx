@@ -1,6 +1,10 @@
 import React, { useContext } from "react"; 
 import { TransactionContext } from "../context/TransactionContext"; 
 import { Loader } from "."; 
+
+import { BsArrowDownShort } from 'react-icons/bs'
+import { AiOutlineDown } from 'react-icons/ai'
+
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
 const Input = ({ placeholder, name, type, value, handleChange }) => (
@@ -28,26 +32,54 @@ const Send = () => {
   };
 
   return (
-    <div className="flex-1 flex justify-start   items-center flex-col w-full p-5 animate-slide-in">
-    <h1 className="text-white font-poppins font-black text-5xl tracking-wide">Cryptway Send</h1>
-    <p className="text-gray-400	 font-poppins font-medium mt-3 text-base">Enter   Wallet Address</p>
-    <div className="mt-10 w-full flex justify-center">
-      <div className="relative md:max-w-[700px] md:min-w-[500px] min-w-full max-w-full gradient-border p-[2px] rounded-3xl">
-        <div className="pink_gradient animate-pulse" />
-        <div className="w-full  bg-[#1F1D2B] backdrop-blur-[4px] rounded-3xl shadow-card flex p-10">
-           <div className="p-5   w-full flex flex-col justify-start items-center ">
-        <Input placeholder="Address To"  className="block w-full p-4 rounded-lg   bg-gray-700  border-black  placeholder-gray-400 text-white focus:ring-blue-500  focus:border-blue-500" name="addressTo" type="text" handleChange={handleChange} />
-            <Input className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full " placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
-            <div className="h-[1px] w-full bg-gray-400 my-2" />
+   
+    <div className="flex-1 flex justify-start   items-center flex-col w-full p-5 ">
+     
+      <div className="bg-[#2D2F36] mt-20   relative w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
+        
+        <div className="px-2 flex items-center text-white justify-between font-semibold text-xl">
+          <span>SEND</span>
 
-            {isLoading
+        </div>
+   <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
+       
+
+<Input   className="bg-transparent placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+
+
+         
+        
+          <div className="flex w-1/4">
+           
+            <div className="w-full h-min flex justify-between items-center bg-[#2D2F36] hover:bg-[#41444F] rounded-2xl text-xl font-medium cursor-pointer p-2 mt-[-0.2rem]">
+           
+              <div className="flex text-white items-center">
+                 <span className="mx-2">ETH</span>
+              </div>
+            
+              <AiOutlineDown className="text-lg" />
+            </div>
+          </div>
+        </div>
+       
+        <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
+         
+
+<Input placeholder="0x...."               className="bg-transparent placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl"
+  name="addressTo" type="text" handleChange={handleChange} />
+
+        
+        </div>
+        
+       
+
+        {isLoading
               ? <Loader />
               : (
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="text-white w-full mt-2 border-[1px] p-2 border-[#3d4f7c] hover:bg-[#3d4f7c] rounded-full cursor-pointer"
-                >
+                  className="bg-purple-600 my-2  w-full rounded-3xl py-2 px-8 text-xl font-semibold flex items-center justify-center cursor-pointer border border-black hover:border-[#234169]"  >
                   Send now
                 </button>
               )}
@@ -57,13 +89,10 @@ const Send = () => {
               : (
                 <></>
               )}
-          </div>
-        </div>
 
-        </div>
-        <div className="blue_gradient" />
       </div>
-    </div> 
+ 
+    </div>
            
  
   );

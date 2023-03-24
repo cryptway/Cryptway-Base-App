@@ -29,6 +29,8 @@ function App() {
 
   return (
     <Router>
+      <div class="bg-[#202124] w-full min-h-screen">
+ 
       <Navbar />
       <Routes>
         <Route path="/" element={<Welcome />} />
@@ -43,6 +45,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      </div>
     </Router>
   );
 }
