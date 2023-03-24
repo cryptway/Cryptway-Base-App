@@ -8,10 +8,7 @@ import recieve from "../../../images/wallet.png";
 import logo from "../../../images/logo.png"; 
 import fund from "../../../images/fund-ico.png";
 import dp from "../../../images/walletjazz.jpg";
-import {shortenAddress} from "../../utils/shortenAddress";
-import { HiOutlineLightBulb } from 'react-icons/Hi'
-import {SiEthereum} from 'react-icons/si' 
-import Card from './sidebar'
+import {shortenAddress} from "../../utils/shortenAddress";  
 import Sidebar from "./sidebar";
 
 const NavBarItem = ({ title, classprops }) => (
@@ -49,8 +46,7 @@ const Navbar = () => {
                   
                   className="z-50 flex gap-2 px-4 py-[6px] hover:border-[1px] hover:px-[15px] hover:py-[5px] shadow-lg  flex-row justify-center items-center my-5 bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer"
                 >
-               <SiEthereum   className="text-purple-600 border-[1px] rounded-[100%] p-[2px] border-purple-600 text-xl	" />
-                  <p className="font-poppins font-bold text text-white ">
+             <img src="https://cdn.productboard.com/production/attachments/1ed607c09813afccd00eecd5507ec12fef6731be5001654a410282df70b9eca3/portal_cover/ETH-logo.png" className="h-6 w-6"/> <p className="font-poppins font-bold text text-white ">
                  Goerli
                   </p>
                 </button>
@@ -136,7 +132,7 @@ const Navbar = () => {
                   
                   className=" fixed gap-2 bg-purple-600  bottom-2 right-5 flex px-6 py-[6px] border-[1px] border-[#41444F] hover:px-[23px] hover:py-[5px] shadow-lg  flex-row justify-center items-center my-5  rounded-l-3xl rounded-r-3xl  cursor-pointer"
                 >
-                  <HiOutlineLightBulb  className="text-white text-xl	" /> 
+                   
                   <p className="font-poppins font-bold text text-white text-sm ">
                    Request Feature
                   </p>
