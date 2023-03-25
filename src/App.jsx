@@ -51,7 +51,7 @@ function App() {
 }
 
 function Swap() {
-  window.location.replace("https://swap.cryptway.in/");
+  window.location.replace("https://cryptwayswap.netlify.app/");
   return null;
 }
 function Currencies() {
