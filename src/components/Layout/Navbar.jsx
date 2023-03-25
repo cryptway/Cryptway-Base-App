@@ -8,10 +8,8 @@ import recieve from "../../../images/wallet.png";
 import logo from "../../../images/logo.png"; 
 import fund from "../../../images/fund-ico.png";
 import dp from "../../../images/walletjazz.jpg";
-import {shortenAddress} from "../../utils/shortenAddress";
-import { HiOutlineLightBulb } from 'react-icons/Hi'
-import {SiEthereum} from 'react-icons/si' 
-import Card from './sidebar'
+import {shortenAddress} from "../../utils/shortenAddress"; 
+import {SiEthereum} from 'react-icons/si'  
 import Sidebar from "./sidebar";
 
 const NavBarItem = ({ title, classprops }) => (
@@ -137,8 +135,7 @@ const Navbar = () => {
                   
                   className=" fixed gap-2 bg-purple-600  bottom-2 right-5 flex px-6 py-[6px] border-[1px] border-[#41444F] hover:px-[23px] hover:py-[5px] shadow-lg  flex-row justify-center items-center my-5  rounded-l-3xl rounded-r-3xl  cursor-pointer"
                 >
-                  <HiOutlineLightBulb  className="text-white text-xl	" /> 
-                  <p className="font-poppins font-bold text text-white text-sm ">
+                   <p className="font-poppins font-bold text text-white text-sm ">
                    Request Feature
                   </p>
                 </button> </a>
