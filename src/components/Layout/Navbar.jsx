@@ -8,11 +8,7 @@ import recieve from "../../../images/wallet.png";
 import logo from "../../../images/logo.png"; 
 import fund from "../../../images/fund-ico.png";
 import dp from "../../../images/walletjazz.jpg";
-<<<<<<< HEAD
 import {shortenAddress} from "../../utils/shortenAddress";
-=======
-import {shortenAddress} from "../../utils/shortenAddress"; 
->>>>>>> 90f433e481c2ee55981578a6dde7940b35cc4244
 import {SiEthereum} from 'react-icons/si'  
 import Sidebar from "./sidebar";
 
