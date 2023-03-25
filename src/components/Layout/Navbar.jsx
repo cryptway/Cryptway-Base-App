@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return ( 
  <nav className="fixed  w-full justify-between">
-<header class="flex items-center px-6 py-0 "><div class="flex items-center flex-grow basis-0"> 
+<header class="flex items-center px-1 sm:px-6 py-0 "><div class="flex items-center flex-grow basis-0"> 
 <Link to="/"  className="flex gap-2"> <img src={logo} alt="logo" className="w-8 h-8 object-contain"  />  <text className="text-white text-2xl font-semibold">CRYPTWAY</text></Link>
        </div>
     <div class="justify-end">
@@ -33,8 +33,8 @@ const Navbar = () => {
                   onClick={connectWallet}
                   className="flex px-6 py-[6px]  shadow-lg  flex-row justify-center items-center my-5 bg-[#2D2F36]  rounded-l-3xl rounded-r-3xl  cursor-pointer"
                 >
-                  <p className="font-poppins font-bold text text-white ">
-                    Connect Wallet
+                  <p className=" flex gap-1 font-poppins font-bold text text-white ">
+                    Connect <span className="hidden sm:block" > Wallet </span> 
                   </p>
                 </button>
               )}
