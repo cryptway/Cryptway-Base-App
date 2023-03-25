@@ -67,6 +67,19 @@ body {
   0 5px 10px rgba(0, 0, 0, 0.142);
 }
 
+@media screen and (max-width: 600px) {
+   .appbar {
+    bottom: 0;
+    left: 0;
+    right: 0;
+     flex: content;
+    z-index:100;
+ 
+   }
+   .side-z {z-index: 101;}
+
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -88,7 +88,7 @@ const Navbar = () => {
          
  
       <div
-         className={`fixed shadow-lg  bottom-4 right-0 bg-[#2D2F36]  rounded-l-xl p-3 grid sm:grid-cols-1   gap-4   z-40  ease-in-out duration-300 ${
+         className={`fixed side-z shadow-lg  bottom-20 right-0 bg-[#2D2F36]  rounded-l-xl p-3 grid sm:grid-cols-1   gap-4    ease-in-out duration-300 ${
            showSidebar ? "translate-x-2 " : "translate-x-full"
          }`}
        >
@@ -101,10 +101,10 @@ const Navbar = () => {
           </div></header> 
 
 
-
+  
           
-<div class="ml-8 mt-8 fixed  ">
-<div class="bg-[#2D2F36] content-box rounded-xl p-3 grid sm:grid-cols-1   gap-4 border-[1.5px] border-[#41444F]">
+<div class="sm:ml-8 sm:mt-8 fixed  appbar">
+<div class="bg-[#2D2F36]   content-box sm:rounded-xl rounded-t-xl shadow-inner sm:p-3 p-1 grid grid-cols-5 sm:grid-cols-1    gap-4 border-[1.5px] border-[#41444F]">
 
  <div>
     <button type="button"  onClick={() => setShowSidebar(!showSidebar)} class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={recieve}  className="w-10 h-10 object-contain" /></button>
@@ -125,6 +125,7 @@ const Navbar = () => {
  <div>
     <Link to="/currencies"><button type="button" class=" p-2 rounded  hover:shadow hover:bg-[#41444F]"><img src={currencies}  className="w-10 h-10 object-contain" /></button></Link>
  </div>
+  
  
 </div>
 </div> 
