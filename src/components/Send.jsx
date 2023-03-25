@@ -32,10 +32,10 @@ const Send = () => {
   };
 
   return (
-    <div className="flex-1 flex justify-start   items-center flex-col w-full p-5 z-40 ">
+    <div className="flex-1 flex justify-start   items-center flex-col   p-5 z-40 ">
      
       
-    <div className="bg-[#2D2F36] mt-20   w-max-full     w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
+    <div className="bg-[#2D2F36] mt-20   w-max-full     sm:w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
         
         <div className="px-2 flex items-center text-white justify-between font-semibold text-xl">
           <span>SEND</span>

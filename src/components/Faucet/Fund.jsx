@@ -29,9 +29,9 @@ const Fund = () => {
   };
 
   return (
-    <div className="flex-1 flex justify-start   items-center flex-col w-full  ">
+    <div className="flex-1 flex justify-start   items-center flex-col ">
      
-<div className="bg-[#2D2F36] mt-20     w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
+<div className="bg-[#2D2F36] mt-20     sm:w-[30rem]   md:w-[32rem] rounded-3xl p-4 content-box">
   
   <div className="px-2 flex items-center text-white justify-between font-semibold text-xl">
     <span>Fill The Faucet </span>
