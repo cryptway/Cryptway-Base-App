@@ -15,7 +15,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
     step="0.0001"i
     value={value}
     onChange={(e) => handleChange(e, name)}
-    className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
+    className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm "
   />
 );
 
@@ -51,7 +51,7 @@ const Fund = () => {
 <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
  
 
-<input   className="bg-transparent mr-2 rounded h-10 placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+<Input   className="bg-transparent mr-2 rounded h-10 placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
   
           <div className="flex w-1/4">
            
