@@ -7,8 +7,8 @@ import { AiOutlineDown } from 'react-icons/ai'
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
 
-const input = ({ placeholder, name, type, value, handleChange }) => (
-  <input
+const Input = ({ placeholder, name, type, value, handleChange }) => (
+  <Input
     placeholder={placeholder}
     type={type}
     step="0.0001"
@@ -44,7 +44,7 @@ const Send = () => {
    <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
        
 
-<input   className="bg-transparent mr-2 rounded h-10 placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
+<Input   className=" mr-2 rounded h-10 placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl" placeholder="Amount (ETH)" name="amount" type="number" handleChange={handleChange} />
 
 
          
@@ -64,7 +64,7 @@ const Send = () => {
         <div className="bg-[#20242A] my-3 rounded-2xl p-6 text-3xl  border border-[#20242A] hover:border-[#41444F]  flex justify-between">
          
 
-<input placeholder="0x...."               className=" rounded h-10 bg-transparent placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl"
+<Input placeholder="0x...."               className=" rounded h-10  placeholder:text-[#B2B9D2] outline-none mb-6 w-full text-2xl"
   name="addressTo" type="text" handleChange={handleChange} />
 
         
