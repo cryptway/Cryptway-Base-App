@@ -23,7 +23,6 @@ const Navbar = () => {
   return ( 
  <nav className="fixed  w-full justify-between">
 <header class="flex items-center px-1 sm:px-6 py-0 "><div class="flex items-center flex-grow basis-0"> 
-<Link to="/"  className="flex gap-2"> <img src={logo} alt="logo" className="w-8 h-8 object-contain"  />  <text className="text-white text-2xl font-semibold">cryptotransfter</text></Link>
        </div>
     <div class="justify-end">
             
@@ -51,7 +50,7 @@ const Navbar = () => {
                 >
                <SiEthereum   className="text-purple-600 border-[1px] rounded-[100%] p-[2px] border-purple-600 text-xl	" />
                   <p className="font-poppins font-bold text text-white ">
-                 Goerli
+                 sepolia
                   </p>
                 </button></div>
 
