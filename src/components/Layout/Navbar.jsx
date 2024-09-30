@@ -23,7 +23,7 @@ const Navbar = () => {
   return ( 
  <nav className="fixed  w-full justify-between">
 <header class="flex items-center px-1 sm:px-6 py-0 "><div class="flex items-center flex-grow basis-0"> 
-<Link to="/"  className="flex gap-2"> <img src={logo} alt="logo" className="w-8 h-8 object-contain"  />  <text className="text-white text-2xl font-semibold">CRYPTWAY</text></Link>
+<Link to="/"  className="flex gap-2"> <img src={logo} alt="logo" className="w-8 h-8 object-contain"  />  <text className="text-white text-2xl font-semibold">cryptotransfter</text></Link>
        </div>
     <div class="justify-end">
             
